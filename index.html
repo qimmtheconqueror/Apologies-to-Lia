@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter for Liyy</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #fce4ec;
+            overflow: hidden;
+        }
+
+        .apology-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            position: relative; /* Added positioning for the container */
+        }
+
+        h2 {
+            color: #e91e63;
+        }
+
+        p {
+            font-size: 16px;
+            text-align: justify;
+            line-height: 1.6;
+            color: #555555;
+        }
+
+        .btn-pink {
+            background-color: #e91e63;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-pink:hover {
+            background-color: #d81b60;
+        }
+
+        .gif-container {
+            float: right;
+            margin-left: 20px;
+        }
+
+        .custom-alert {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #d7f8f6;
+            color: #721c24;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .custom-alert img {
+            max-width: 100%;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .no-btn {
+            background-color: #e91e63;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 0px;
+            margin-left: 5px;
+            position: absolute; /* Added positioning for the "No" button */
+        }
+
+        .no-btn:hover {
+            background-color: #d81b60;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container apology-container">
+    <h2 class="text-center">PERMOHONAN MAAF UNTUK <br> LIAA CANTIKKK</h2>
+    <div class="gif-container">
+        <img src="https://media.tenor.com/SFy5Za0DyMEAAAAi/erm-fingers.gif" alt="Gif Permintaan Maaf" style="max-width: 70%;">
+    </div>
+
+    <p>Hai Liyy,</p>
+
+    <p>aqim ingin mengungkapkan betapa pentingnya kamu. aqim memohon maaf atas kesalahan yang aqim lakukan. aqim benar-benar menyesal dan berharap dapat mendapatkan maaf dari kamu.</p>
+
+    <p>aqim bersumpah untuk belajar dari kesalahan ini dan menjadi lebih baik. Liaa berharga dalam hidup aqim, dan aqim tidak ingin merusak hubungan ini.</p>
+
+    <p>Apakah liaa bisa memberikan aqim kesempatan untuk memperbaiki kesalahan ini? maafin aqim ya.</p>
+
+    <button id="forgiveButton" class="btn btn-pink">iyaa sayang :3</button>
+    <button class="no-btn" id="noBtn">No</button>
+</div>
+
+<div class="custom-alert" id="customAlert">
+    <img src="https://media.tenor.com/oWxP5sU_EisAAAAC/mochi-peachcat.gif" alt="Gif Permintaan Maaf">
+    <p style="font-size: 20px;">MAKASII LIAA CANTIKKUUU, MAAP YAA JANJI GA NGULANG LAGI</p>
+</div>
+
+
+<audio id="myAudio" autoplay loop style="display: none;">
+    <source src="sempurna.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script>
+    
+    document.getElementById('forgiveButton').addEventListener('click', function () {
+        document.getElementById('customAlert').style.display = 'block';
+    });
+
+    document.addEventListener('click', function () {
+        var audio = document.getElementById('myAudio');
+        if (audio.paused) {
+            audio.play();
+        }
+        document.removeEventListener('click', arguments.callee);
+    });
+
+    // Mendefinisikan elemen noBtn
+    const noBtn = document.querySelector(".no-btn");
+
+    // Fungsi untuk mengubah posisi tombol "No" secara acak saat cursor mendekatinya
+    noBtn.addEventListener("mouseover", () => {
+        const noBtnRect = noBtn.getBoundingClientRect();
+        const maxX = window.innerWidth - noBtnRect.width;
+        const maxY = window.innerHeight - noBtnRect.height;
+
+        const randomX = Math.floor(Math.random() * maxX);
+        const randomY = Math.floor(Math.random() * maxY);
+
+        noBtn.style.left = randomX + "px";
+        noBtn.style.top = randomY + "px";
+    });
+</script>
+
+
+</body>
+</html>
